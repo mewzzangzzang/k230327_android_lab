@@ -2,6 +2,15 @@ package com.example.k230327_android_lab
 
 
 
+fun hofFun(arg: (Int) -> Boolean): () -> String {
+    val result = if(arg(10)) {
+        "valid"
+    } else {
+        "invalid"
+    }
+    return {"hofFun result : $result"}
+}
+
 val data5 : Int = 1
 
 
@@ -34,6 +43,11 @@ fun main(){
         data1의 size : ${data1.size}
         data1의 요소 :${data1[0]}, ${data1.get(1)}, ${data1[2]}
     """.trimIndent())
+
+
+
+        val result = hofFun({no -> no > 0})
+        println(result())
 
 
 
