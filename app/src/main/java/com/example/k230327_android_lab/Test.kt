@@ -53,8 +53,8 @@ fun main(){
 
 
 
-    var data6: Int? = 2
-    data6 = null
+  /*  var data6: Int? = 2
+    data6 = null*/
     // 널 허용할 수 있는 연산자가 있을 때만.
 
 

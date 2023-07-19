@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SignActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/metamong"
+        android:layout_marginBottom="20dp"/>
+    <EditText
+        android:id="@+id/inputId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="id"
+        android:inputType="text"
+        android:layout_marginBottom="20dp"
+        />
+    <EditText
+        android:id="@+id/inputPw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="pw"
+        android:inputType="textPassword"
+        android:layout_marginBottom="20dp"
+        />
+    <EditText
+        android:id="@+id/inputPw2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="pwcheck"
+        android:inputType="textPassword"
+        android:layout_marginBottom="20dp"
+        />
+
+    <EditText
+        android:id="@+id/inputName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="name"
+        android:inputType="text"
+        android:layout_marginBottom="20dp"
+
+        />
+    <Button
+        android:id="@+id/signBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="가입" />
+</LinearLayout>
+
