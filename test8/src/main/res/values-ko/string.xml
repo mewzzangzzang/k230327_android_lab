@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">test8</string>
+    <string name="app_mainTitle">하이~모바일~</string>
+    <string name="app_footCom">회사이름~</string>
+    <string name="app_footComAdr"></string>
+
+
+</resources>
