@@ -18,7 +18,7 @@ class JetActivity : AppCompatActivity() {
         //툴바를 직접 만들어서 뷰에 붙이는 작업
         // 뷰, 뒷단 코드 가져오기
         //경로
-        //setSupportActionBar(binding.toolbar)
+        setSupportActionBar(binding.toolbar)
     }
 
 
