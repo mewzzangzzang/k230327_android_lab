@@ -1,4 +1,4 @@
-package com.example.test10_11_12
+package com.example.test10_11_12.test11
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.example.test10_11_12.R
 import com.example.test10_11_12.databinding.ActivityJetBinding
 
 class JetActivity : AppCompatActivity() {
@@ -18,7 +19,7 @@ class JetActivity : AppCompatActivity() {
         //툴바를 직접 만들어서 뷰에 붙이는 작업
         // 뷰, 뒷단 코드 가져오기
         //경로
-        setSupportActionBar(binding.toolbar)
+        ///setSupportActionBar(binding.toolbar)
     }
 
 

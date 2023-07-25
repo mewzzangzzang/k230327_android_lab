@@ -1,23 +1,17 @@
-package com.example.test10_11_12
+package com.example.test10_11_12.test11
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
-import android.app.ProgressDialog.show
 import android.app.TimePickerDialog
 import android.content.DialogInterface
-import android.content.pm.PackageManager
-import android.nfc.Tag
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
-import androidx.core.content.ContextCompat
 import com.example.test10_11_12.databinding.ActivityMainBinding
 import com.example.test10_11_12.databinding.DialogSampleBinding
 
