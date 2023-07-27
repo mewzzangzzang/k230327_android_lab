@@ -37,7 +37,7 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper
         onCreate(db)
     }
 
-    // 데이터베이스 추가하기 insert
+    // 데이터베이스 추가하기 insert addActivity
     fun insertData(name: String?, phone: String?, address: String?): Boolean {
         // 디비 사용시 쓰기, 수정, 삭제 ->writableDatabase 사용함.
         val db = this.writableDatabase

@@ -39,7 +39,7 @@ class AddActivity : AppCompatActivity() {
                 "insert into TODO_TB (todo) values (?)",
                 arrayOf<String>(inputData)
             )
-            //db 다사용하고 자원반남
+            //db 다사용하고 자원반납
             db.close()
             //후처리 부분
             //메인 플로팅 액션 버튼 클릭->현재add입력창에서 텍스트 입력후
