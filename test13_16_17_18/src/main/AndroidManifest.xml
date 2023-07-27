@@ -4,18 +4,15 @@
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
-    <!--미디어서버 접근시 허가 부분 변경되었음 일단 예전버전은-->
-    <!--https://developer.android.com/about/versions/13/behavior-changes-13?hl=ko-->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 미디어서버 접근시 허가 부분 변경되었음 일단 예전버전은 -->
+    <!-- https://developer.android.com/about/versions/13/behavior-changes-13?hl=ko -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
-    <!--세트로 같이 요청-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> <!-- 세트로 같이 요청 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -24,23 +21,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.K230327_Android_Lab">
-
-<!--        콘텐츠 프로바이더 사용하기 위해서 사전작업-->
-<!--        authorities 패키지명 변경  com.example.test13_16_17_18.fileprovider
+        <activity
+            android:name=".test17crud.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test17.AddActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test16multimg.MainActivity"
+            android:exported="true" /> <!-- 콘텐츠 프로바이더 사용하기 위해서 사전작업 -->
+        <!--
+        authorities 패키지명 변경  com.example.test13_16_17_18.fileprovider
             emulated설정에서 파일경로 확인
-            변경전 android:authorities="com.example.ch16_provider.fileprovider"-->
-<!--        2 파일의 경로위치를 res 정의해서 가져와서 사용하기 @xml/file_paths 경로 재사용하기 -->
-<!--        ch16_provider/src/main/res/xml/file_paths.xml-->
-
-        <provider android:name="androidx.core.content.FileProvider"
+            변경전 android:authorities="com.example.ch16_provider.fileprovider"
+        -->
+        <!-- 2 파일의 경로위치를 res 정의해서 가져와서 사용하기 @xml/file_paths 경로 재사용하기 -->
+        <!-- ch16_provider/src/main/res/xml/file_paths.xml -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.test13_16_17_18.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
-            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
-
-
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
         </provider>
+
         <activity
             android:name=".test16.ImageActivity"
             android:exported="true" />
@@ -68,11 +74,10 @@
             android:exported="true" />
         <activity
             android:name=".test18.MainActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".test17.MainActivity"
-            android:exported="false" />
-
+            android:exported="true" />
         <activity
             android:name=".test13.MainActivity"
             android:exported="true">
