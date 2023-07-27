@@ -61,6 +61,7 @@ class ImageActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult())
         {
             try {
+                //갤러리에서 선택된 이미지를 받아서 처리합니다
                 val calRatio = calculateInSampleSize(
                     it.data!!.data!!,
                     resources.getDimensionPixelSize(R.dimen.imgSize),
@@ -71,12 +72,21 @@ class ImageActivity : AppCompatActivity() {
                 val option = BitmapFactory.Options()
                 option.inSampleSize = calRatio
 
+                //Glide라는 라이브러리를 자주 활용해서 이미지처리
+
+                //파일입,출력
+                //사진을 바이트 단위로 읽었다. inputStream 이미지의 바이트 단위의 결과값
                 var inputStream = contentResolver.openInputStream(it.data!!.data!!)
                 val bitmap = BitmapFactory.decodeStream(inputStream, null, option)
                 inputStream!!.close()
                 inputStream = null
 
+                //decodeStream: 바이트로 읽어서 실제 이미지의 타입으로 변환, 단위bitmap으로 변환
+                //bitmap은 안드로이드에서 사용하는 이미지 단위. 보통, 네트워크, 파일io 할때 자주활용
                 bitmap?.let {
+                    //사진 -> 바이트 읽어서 -> inputStream -> decodeStream ->bitmap -> 뷰 출력
+                    //이미지, 영상 관련 인코딩 관심있다면, 작업하신 깃 참고하면 좋을거 같아요
+                    //
                     Log.d("kkang", "결과 뷰에 적용하기전")
                     //결과 뷰에 갤러리에서 가져온 사진을 할당 부분
                     binding.userImageView.setImageBitmap(bitmap)
@@ -135,6 +145,7 @@ class ImageActivity : AppCompatActivity() {
                 SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
             //안드로이드 시스템에서 정하는 DIRECTORY_PICTURES 정해져 있음
             val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            Log.d("z","storageDir 위치 :$storageDir")
             //JPEG_${timeStamp}_.jpg 파일 준비, 물리 파일 생성
             val file = File.createTempFile(
                 "JPEG_${timeStamp}_",
@@ -143,6 +154,7 @@ class ImageActivity : AppCompatActivity() {
             )
             //물리 파일의 실제 경로
             filePath = file.absolutePath
+            Log.d("z","filePath경로 $filePath")
             //카메라에서 찍은 사진에 접근하기 위해서 콘텐츠 프로바이더에 요청
             //요청시 매니페스트에서 정한 같은 문자열을 사용합니다
             // "com.example.test13_16_17_18.fileprovider"

@@ -22,6 +22,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.K230327_Android_Lab">
         <activity
+            android:name=".test17sharedpreference.DetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test17sharedpreference.MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".test17crud.MainActivity"
             android:exported="true" />
         <activity
