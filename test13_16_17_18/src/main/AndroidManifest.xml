@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- 연락처 이용한다는 권한 설정 -->
+    <!-- 네트워크 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 연락처 이용한다는 권한 설정 -->
     <uses-feature
         android:name="android.hardware.telephony"
-        android:required="false" />
-
+        android:required="false" /> <!-- 외부접근 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 미디어서버 접근시 허가 부분 변경되었음 일단 예전버전은 -->
-    <!-- https://developer.android.com/about/versions/13/behavior-changes-13?hl=ko -->
+    <!--
+ 안드로이드 공식문서 참고
+    https://developer.android.com/about/versions/13/behavior-changes-13?hl=ko
+    -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> <!-- 세트로 같이 요청 -->
@@ -14,13 +18,28 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
+
+
+    <!--    애플리케이션 주의사항, 사용여부 -> 매니페스트 파일의 <application 태그 내부에
+         name으로 설정해서, 해당 앱을 실행할 때, 메모리상에 등록해서 사용한다.
+          제발 확인해주세요-->
     <application
+        android:name=".test18reqres.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.K230327_Android_Lab">
+        <activity
+            android:name=".test18reqres.MainActivity3"
+            android:exported="true" />
+        <activity
+            android:name=".test18reqres.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test18.MainActivity581"
+            android:exported="true" />
         <activity
             android:name=".test17sharedpreference.DetailActivity"
             android:exported="true" />

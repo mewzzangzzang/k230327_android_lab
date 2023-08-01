@@ -1,18 +1,25 @@
 package com.example.extest0719
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.room.Room
+import androidx.room.RoomDatabase
 
 import com.example.extest0719.databinding.ActivitySignBinding
 
 class SignActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        val binding = ActivitySignBinding.inflate(layoutInflater)
+    lateinit var binding: ActivitySignBinding
 
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivitySignBinding.inflate(layoutInflater)
+
+        RoomDatabase
         super.onCreate(savedInstanceState)
-        /* setContentView(R.layout.activity_main)*/
         setContentView(binding.root)
 
         val pw: String = binding.inputPw.text.toString()
@@ -27,6 +34,9 @@ class SignActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this@SignActivity, "가입실패", Toast.LENGTH_SHORT).show()
             }
+
+
+
 
             /* binding.signBtn.setOnClickListener {
             val intent = Intent(this@SignActivity, SignActivity::class.java)

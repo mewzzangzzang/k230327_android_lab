@@ -37,6 +37,7 @@ class MainActivity443 : AppCompatActivity() {
                 }
             }
             Log.d("kkang","time : $time")
+                Log.d("kkang","sum: $sum")
             binding.resultView.text = "sum : $sum"
 
 //            val handler=object: Handler(){
