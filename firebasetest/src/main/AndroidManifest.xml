@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.firebasetest">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<!--    33버전이후 세분화-->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+<!--    메뉴부분 액션바 때문에 테마에서 액션바가 있는부분 호환성 문제있을 수 있으니 주의-->
+<!--        앱이 실행되는 시점에서, 자주 사용하는 파이어베이스 관련 객체, 인증, 스토어, 스토리지를 올려두고 사용하는 방법-->
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.K230327_Android_Lab">
+<!--        클라우드 메세지(FCM:firebase Cloud Message) 알림 기능 구현 할때 사용예정-->
+<!--            데이팅 앱에서 서로 매칭시 알림 보내는 기능 하나만 소개예정-->
+        <meta-data
+            android:name="com.google.firebase.message.default_notification_icon"
+            android:resource="@drawable/ic_stat_ic_notification"/>
+        <meta-data
+            android:name="com.google.firebase.message.default_notification_color"
+            android:resource="@color/colorAccent"/>
+        <meta-data
+            android:name="com.google.firebase.message.default_notification_channel_id"
+            android:value="fcm_default_channel"/>
+<!--        백그라운드에서 실행되는 컴포넌트이고, 앱이 시작하고있을때
+            포그라운드, 백그라운드 상황시, FCM, 알림을 받는 로직이 필요함 로직을 처리하는 부분이 서비스 -->
+<!--        기본 구성, 1채널, 2토큰, 메세지(데이터) 구성해서 FCM 서버를 이용, 상대방에게 메세지를 전달하는 기능을 구현-->
+        <service
+            android:name=".MyFirebaseMessageService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".AuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+<!--        입력창에 소프트 키보드 사용시 화면 리사이즈-->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
