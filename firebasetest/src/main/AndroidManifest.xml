@@ -18,6 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.K230327_Android_Lab">
+
 <!--        클라우드 메세지(FCM:firebase Cloud Message) 알림 기능 구현 할때 사용예정-->
 <!--            데이팅 앱에서 서로 매칭시 알림 보내는 기능 하나만 소개예정-->
         <meta-data

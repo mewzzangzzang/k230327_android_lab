@@ -19,6 +19,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         //dex 파일 갯수 제한 해제 코드
+        //라이브러리를 한번에 불러올수있는 한도 해제
         multiDexEnabled true
     }
 
@@ -35,6 +36,7 @@ android {
 //    kotlinOptions {
 //        jvmTarget = '1.8'
 //    }
+    //안드로이드 스튜디오 업그레이드, 컴파일시 코틀린 버전 필요
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
@@ -65,8 +67,6 @@ dependencies {
     //추가2
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
-
     implementation 'com.google.firebase:firebase-firestore-ktx:24.0.0'
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
     implementation 'com.github.bumptech.glide:glide:4.12.0'
